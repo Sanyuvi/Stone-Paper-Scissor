@@ -6,7 +6,7 @@ const HistoryPage = () => {
   const [gameData, setGameData] = useState();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const API = "http://localhost:5578";
+  const API = "https://stone-paper-scissor-xosi.vercel.app";
   const navigate = useNavigate();
 
   useEffect(() => {
