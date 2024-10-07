@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const HistoryPage = () => {
   const [gameData, setGameData] = useState();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const API = "http://localhost:5578";
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchGameHistory = async () => {
@@ -30,7 +32,8 @@ const HistoryPage = () => {
   if (!gameData) return <p>No game data available.</p>;
 
   return (
-    <div className="bg-dark-subtle">
+    <div className="bg-dark-subtle p-2">
+      <button className="btn btn-dark float-end" onClick={()=> navigate('/')}>Back</button>
       <h1>Game History</h1>
       {gameData.map((game, index) => (
         <div key={index} className="border border-secondary border-1">
