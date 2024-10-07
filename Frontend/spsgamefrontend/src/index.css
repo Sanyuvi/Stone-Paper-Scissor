@@ -41,6 +41,8 @@ code {
   animation: tada 0.5s ease forwards;
   padding: 25px;
   color: #5C6AC4;
+  font-size: 20px;
+  text-shadow: 3px 3px 10px aqua;
 }
 
 @keyframes tada {
