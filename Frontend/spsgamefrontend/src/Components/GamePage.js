@@ -19,7 +19,7 @@ const GamePage = () => {
     navigate("/historyPage"); // Specify the path for the game history page
   };
 
-  const API = "http://localhost:5578";
+  const API = "https://stone-paper-scissor-xosi.vercel.app";
   const icons = [
     { id: 1, name: "Stone", iconClass: "fa-solid fa-bomb", color: "text-muted" },
     {
