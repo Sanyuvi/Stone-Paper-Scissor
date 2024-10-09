@@ -5,7 +5,7 @@ import HistoryPage from "./Components/HistoryPage";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App position-relative">
       <Routes>
         <Route exact path="/" element={<GamePage />} />
         <Route path="/historyPage" element={<HistoryPage />} />
