@@ -4,7 +4,7 @@ const pool = require("./db");
 const app = express();
 
 require("dotenv").config();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5578;
 
 app.use(cors());
 app.use(express.json()); // to parse JSON bodies
