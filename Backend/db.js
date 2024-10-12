@@ -1,37 +1,22 @@
 const { Pool } = require("pg");
 
-// PostgreSQL connection setup
-// const pool = new Pool({
-//   user: "postgres",
-//   host: "localhost",
-//   database: "stonepaperscissors",
-//   password: "test",
-//   port: 5432,
-// });
-
-// module.exports = pool;
-
-require('dotenv').config();
-// const { Pool } = require('pg');
+require('dotenv').config()
 
 const pool = new Pool({
-    connectionString: process.env.POSTGRES_URL,
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    database: process.env.DB_NAME,
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT,
 });
 
-// Example of a query to test the connection
-const testConnection = async () => {
-    try {
-        const client = await pool.connect();
-        console.log("Connected to the database!");
-        const res = await client.query('SELECT NOW()');
-        console.log('Current time:', res.rows[0]);
-        client.release();
-    } catch (err) {
-        console.error('Database connection error:', err);
+pool.connect(err => {
+    if (err) {
+        console.error('Database connection error:', err.stack);
+    } else {
+        console.log('Connected to PostgreSQL database');
     }
-};
+});
 
-testConnection();
 
 module.exports = pool
-
