@@ -31,8 +31,8 @@ const GamePage = () => {
     navigate("/historyPage"); // Specify the path for the game history page
   };
 
-  // const API = "https://stone-paper-scissor-xosi.vercel.app";
-  const API = "http://3.104.238.165:3001";
+  const API = "https://stone-paper-scissor-liwz.vercel.app";
+  // const API = "http://localhost:3001";
   const icons = [
     {
       id: 1,

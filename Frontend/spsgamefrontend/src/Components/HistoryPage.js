@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 const HistoryPage = () => {
   const [gameData, setGameData] = useState();
   const [loading, setLoading] = useState(false);
-  // const API = "https://stone-paper-scissor-xosi.vercel.app";
-  const API = "http://3.104.238.165:3001";
+  const API = "https://stone-paper-scissor-liwz.vercel.app";
+  // const API = "http://localhost:3001";
   const navigate = useNavigate();
 
   const icons = [
