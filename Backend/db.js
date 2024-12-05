@@ -1,20 +1,19 @@
 const { Pool } = require("pg");
-
+const fs = require("fs");
 require("dotenv").config();
 
 const pool = new Pool({
-  user: "ubuntu",
-  host: "localhost",
-  database: "stonepaperscissors",
-  password: "test",
-  port: 5432,
+  connectionString: process.env.POSTGRES_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
-pool.connect((err) => {
+pool.query("SELECT NOW()", (err, res) => {
   if (err) {
-    console.error("Database connection error:", err.stack);
+    console.error("Error executing query", err.stack);
   } else {
-    console.log("Connected to PostgreSQL database");
+    console.log("PostgreSQL connected! Current time:", res.rows[0].now);
   }
 });
 
